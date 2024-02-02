@@ -59,5 +59,96 @@ public class Main
 }
 
 
+2/2/24
+
+//check prime or not
+import java.util.Scanner;
+public class Main
+{
+    static boolean Prime(int n){
+        for(int i=2;i<=n/2;i++){
+            if(n%i==0)
+              return false;
+        }
+        return true;
+    }
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    
+		System.out.println(Prime(n));
+	}
+}
+
+//calculate nearest prime
+import java.util.Scanner;
+public class Main
+{
+    static boolean Prime(int n){
+        
+        for(int i=2;i<=n/2;i++){
+            if(n%i==0)
+              return false;
+        }
+        return true;
+    }
+	public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    int x,y;
+	    x=y=n;
+	    if(Prime(n)){
+	        System.out.println(n);
+	    }
+	    else{
+	        while(true){
+	            if(Prime(++x)||Prime(--y)){
+	            break;
+	            }
+	        }
+	        if(Prime(x))
+	        System.out.println(x);
+	        else if(Prime(y))
+	        System.out.println(y);
+	        
+	    }
+		 
+	}
+}
+
+//check if no is armstrong or not
+import java.util.Scanner;
+public class Main
+{
+    static void Armstrong(int n){
+        int r,t=n,count=0,sum=0;
+        while(t!=0){
+            r=t%10;
+            count++;
+            t=t/10;
+        }
+        t=n;
+         while(t!=0){
+            r=t%10;
+             sum+=Math.pow(r,count);
+             t=t/10;
+         }
+        if(n==sum){
+            System.out.println(n + " is Armstrong no");
+        }
+        else
+        System.out.println(n + " is not Armstrong no");
+        
+    }
+	public static void main(String[] args) {
+	   Scanner in=new Scanner(System.in);
+	   int n=in.nextInt();
+	   Armstrong(n);
+	   
+	}
+}
+
+
+
 
 
